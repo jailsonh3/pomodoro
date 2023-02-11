@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import { CycleProvider } from './context/CycleContext'
 
 // import { Button } from './components/Button'
 import { Router } from './Router'
@@ -11,7 +12,9 @@ export function App() {
   return (
     <ThemeProvider theme={defaultColor}>
       <BrowserRouter>
-        <Router />
+        <CycleProvider>
+          <Router />
+        </CycleProvider>
       </BrowserRouter>
 
       <GlobalStyled />
